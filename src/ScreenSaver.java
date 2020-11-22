@@ -40,7 +40,7 @@ public class ScreenSaver extends JFrame {
             recalculate();
             repaint();
         };
-        
+
         timer = new javax.swing.Timer(25, time);
         timer.start();
         pack();
