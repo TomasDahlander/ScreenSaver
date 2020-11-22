@@ -25,11 +25,6 @@ public class ScreenSaver extends JFrame {
 
         labels[tracker.getRow()][tracker.getCol()].setText(dot);
 
-        ActionListener time = e -> {
-            recalculate();
-            repaint();
-        };
-
         KeyAdapter arrows = new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -41,6 +36,11 @@ public class ScreenSaver extends JFrame {
         };
         addKeyListener(arrows);
 
+        ActionListener time = e -> {
+            recalculate();
+            repaint();
+        };
+        
         timer = new javax.swing.Timer(25, time);
         timer.start();
         pack();
