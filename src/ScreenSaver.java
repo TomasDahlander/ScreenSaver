@@ -21,10 +21,15 @@ public class ScreenSaver extends JFrame {
     public ScreenSaver() {
         tracker = new MotionTracker(5, 8, rows, cols);
 
-        setUp();
+        setUpBoard();
+        setUpListeners();
 
-        labels[tracker.getRow()][tracker.getCol()].setText(dot);
+        pack();
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
 
+    public void setUpListeners(){
         KeyAdapter arrows = new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -40,15 +45,11 @@ public class ScreenSaver extends JFrame {
             recalculate();
             repaint();
         };
-
         timer = new javax.swing.Timer(25, time);
         timer.start();
-        pack();
-        setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    public void setUp() {
+    public void setUpBoard() {
         grid.setLayout(new GridLayout(rows, cols));
         setLayout(new BorderLayout());
         add(grid, BorderLayout.CENTER);
@@ -61,6 +62,7 @@ public class ScreenSaver extends JFrame {
                 grid.add(labels[i][j]);
             }
         }
+        labels[tracker.getRow()][tracker.getCol()].setText(dot);
     }
 
     public void recalculate() {

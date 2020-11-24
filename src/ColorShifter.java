@@ -11,7 +11,7 @@ public class ColorShifter {
 
     public Color getColor(){
         Random rand = new Random();
-        int nr = rand.nextInt(7);
+        int nr = rand.nextInt(10);
 
         if (nr == 0) return Color.RED;
         else if (nr == 1) return Color.BLUE;
@@ -19,6 +19,9 @@ public class ColorShifter {
         else if (nr == 3) return Color.GREEN;
         else if (nr == 4) return Color.MAGENTA;
         else if (nr == 5) return Color.ORANGE;
-        else return Color.YELLOW;
+        else if (nr == 6) return Color.YELLOW;
+        else if (nr == 7) return Color.WHITE;
+        else if (nr == 8) return new Color(134, 151, 239);
+        else return Color.BLACK;
     }
 }
