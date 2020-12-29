@@ -13,15 +13,17 @@ public class ColorShifter {
         Random rand = new Random();
         int nr = rand.nextInt(10);
 
-        if (nr == 0) return Color.RED;
-        else if (nr == 1) return Color.BLUE;
-        else if (nr == 2) return Color.CYAN;
-        else if (nr == 3) return Color.GREEN;
-        else if (nr == 4) return Color.MAGENTA;
-        else if (nr == 5) return Color.ORANGE;
-        else if (nr == 6) return Color.YELLOW;
-        else if (nr == 7) return Color.WHITE;
-        else if (nr == 8) return new Color(134, 151, 239);
-        else return Color.BLACK;
+        return switch (nr) {
+            case 0 -> Color.RED;
+            case 1 -> Color.BLUE;
+            case 2 -> Color.CYAN;
+            case 3 -> Color.GREEN;
+            case 4 -> Color.MAGENTA;
+            case 5 -> Color.ORANGE;
+            case 6 -> Color.YELLOW;
+            case 7 -> Color.WHITE;
+            case 8 -> new Color(134, 151, 239);
+            default -> Color.BLACK;
+        };
     }
 }

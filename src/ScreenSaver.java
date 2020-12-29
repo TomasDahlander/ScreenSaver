@@ -11,9 +11,9 @@ public class ScreenSaver extends JFrame {
     Color color;
     javax.swing.Timer timer;
 
-    private JPanel grid = new JPanel();
-    private int rows = 27;
-    private int cols = 54;
+    private final JPanel grid = new JPanel();
+    private final int rows = 27;
+    private final int cols = 54;
     JLabel[][] labels = new JLabel[rows][cols];
 
     String dot = '\u25CF' + "";
@@ -108,6 +108,6 @@ public class ScreenSaver extends JFrame {
     }
 
     public static void main(String[] args) {
-        ScreenSaver start = new ScreenSaver();
+        new ScreenSaver();
     }
 }
